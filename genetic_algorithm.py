@@ -7,6 +7,7 @@ POPULATION_SIZE = 10
 NUM_GENERATIONS = 50
 CROSSOVER_PROB = 0.8
 MUTATION_PROB = 0.05
+OFFSET = 70
 DOMAIN = list(range(-1, 22))
 
 def fitness_function(x):
@@ -50,19 +51,18 @@ def crossover(parent1, parent2):
         return parent1, parent2
 
 def mutate(individual):
-    mutated = ""
-    for bit in individual:
-        if random.random() < MUTATION_PROB:
-            mutated += '0' if bit == '1' else '1'
-        else:
-            mutated += bit
-    
-    decoded_value = decode(mutated)
-    if decoded_value < min(DOMAIN):
-        decoded_value = min(DOMAIN)
-    elif decoded_value > max(DOMAIN):
-        decoded_value = max(DOMAIN)
-    return encode(decoded_value)
+    while True:
+        mutated = ""
+        for bit in individual:
+            if random.random() < MUTATION_PROB:
+                mutated += '0' if bit == '1' else '1'
+            else:
+                mutated += bit
+
+        decoded_value = decode(mutated)
+
+        if min(DOMAIN) <= decoded_value <= max(DOMAIN):
+            return encode(decoded_value)
 
 
 def genetic_algorithm():
@@ -75,9 +75,9 @@ def genetic_algorithm():
         decoded = [decode(ind) for ind in population]
         fitness_values = [fitness_function(x) for x in decoded]
 
-        best_fitness_per_gen.append(max(fitness_values))
-        avg_fitness_per_gen.append(sum(fitness_values) / len(fitness_values))
-        min_fitness_per_gen.append(min(fitness_values))
+        best_fitness_per_gen.append(max(max(fitness_values)+OFFSET ,0))
+        avg_fitness_per_gen.append(max(sum(fitness_values) / len(fitness_values)+OFFSET ,0))
+        min_fitness_per_gen.append(max(min(fitness_values)+OFFSET, 0))
 
         best_idx = fitness_values.index(max(fitness_values))
         best_x = decoded[best_idx]
