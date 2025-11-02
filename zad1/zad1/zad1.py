@@ -110,7 +110,7 @@ def plot_results(best, avg, min_):
     plt.plot(generations, min_, label="Min Fitness", color="red")
     plt.xlabel("Generacja")
     plt.ylabel("Dopasowanie")
-    plt.title("Postęp dopasowania (binarne GA)")
+    plt.title("Postep dopasowania (binarne GA)")
     plt.legend()
 
 
