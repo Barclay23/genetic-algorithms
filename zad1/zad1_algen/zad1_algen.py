@@ -130,3 +130,4 @@ def plot_results(best, avg, min_):
 if __name__ == "__main__":
     best, avg, min_ = genetic_algorithm()
     plot_results(best, avg, min_)
+

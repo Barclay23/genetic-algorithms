@@ -2,15 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>3208b1d8-74b6-4526-9adc-c5983240c6d6</ProjectGuid>
+    <ProjectGuid>150b014f-7d7d-45cf-9b90-9883290fc0d7</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>zad1.py</StartupFile>
+    <StartupFile>zad1_algen.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>zad1</Name>
-    <RootNamespace>zad1</RootNamespace>
+    <Name>zad1_algen</Name>
+    <RootNamespace>zad1_algen</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="zad1.py" />
+    <Compile Include="zad1_algen.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
