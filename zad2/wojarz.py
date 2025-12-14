@@ -303,9 +303,8 @@ def plot_two_maps(best_tour: List[int], worst_tour: List[int], coords: List[Tupl
 # -----------------------
 if __name__ == "__main__":
 
-    # Parametry: możesz modyfikować
     POP_SIZE = 100
-    GENERATIONS = 300
+    GENERATIONS = 100
     PM_GENE = 0.02
     ELITISM = 0
 
